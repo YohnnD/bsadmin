@@ -1,0 +1,72 @@
+
+<div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']">
+  <div flex-gt-sm="55">
+    <mat-card>
+      <mat-card-title>Alerts</mat-card-title>
+      <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        card content
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <a mat-button color="accent" class="text-upper">
+          <span>View More</span>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div flex-gt-sm="45">
+    <mat-card>
+      <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+
+        <mat-card-title class="text-xl text-upper mat-display-1 tc-green-700" >Usuario Registrados</mat-card-title>
+
+        <!-- <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+           <span class="mat-title">Usuario Registrados</span>
+        </span>
+
+        <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm"
+                       placeholder="Search here" (searchDebounce)="search($event)" flex>
+        </td-search-box>
+        -->
+      </div>
+
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListAvatar>apps</mat-icon>
+          <h3 matLine  class="tc-grey-500">NOMBRE Y EMAIL</h3>
+          <span hide-xs flex="30" class="mat-body-1 tc-grey-500 text-center">ROL</span>
+          <span hide-xs flex="30" class="mat-body-1 tc-grey-500 text-center">CREADO</span>
+          <span hide-xs flex="30" class="mat-body-1 tc-grey-500 text-center">ACCIÓN</span>
+
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <ng-template let-item let-last="last" ngFor [ngForOf]="basicData">
+          <mat-list-item>
+            <mat-icon matListAvatar>person</mat-icon>
+            <h3 matLine> {{item.name}} </h3>
+            <p mat-line>Correo</p>
+            <span flex></span>
+
+            <span hide-xs flex="30" class="mat-body-1 text-center">
+                        {{item.type}}
+                      </span>
+
+            <span hide-xs flex="30" class="mat-body-1 text-center">
+                        {{item.type}}
+                      </span>
+            <span hide-xs flex="30" class="mat-body-1 text-center ">
+                        <mat-icon class="tc-orange-700">mode_edit</mat-icon>
+                      </span>
+          </mat-list-item>
+          <mat-divider *ngIf="!last" ></mat-divider>
+        </ng-template>
+      </mat-list>
+      <td-paging-bar #pagingBarLinks pageLinkCount="2" [firstLast]="false" [pageSize]="5" [total]="10" (change)="changeLinks($event)">
+        <span hide-xs>{{pagingBarLinks.range}} of {{pagingBarLinks.total}}</span>
+      </td-paging-bar>
+    </mat-card>
+  </div>
+</div>

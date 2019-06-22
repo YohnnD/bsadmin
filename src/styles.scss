@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+
+// Define a custom typography config that overrides the font-family
+// or any typography level.
+$typography: mat-typography-config(
+        $font-family: 'Roboto, monospace',
+        $headline: mat-typography-level(32px, 48px, 700)
+);
+
+@include mat-core($typography); // $typography is an **optional** argument for the mat-core
+
+$primary: mat-palette($mat-orange, 800, 100, 900);
+$accent:  mat-palette($mat-light-blue, 600, 100, 900);
+
+$warn:    mat-palette($mat-red, 600, 100, 900);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+@include covalent-theme($theme, $typography); // $typography is an **optional** argument for the covalent-theme
+
+// (optional) Additional them
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+.m-auto{
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+
+.example-card .mat-card-header-text{
+    margin: 0 !important;
+}
+.yellow-gradient {
+
+    background: #009C8C !important;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.28);
+}
+mat-spinner{
+    z-index: 950;
+    right: 50%;
+    left: 50%;
+    bottom: 50%;
+    position: absolute !important;
+}
+
+.blue-45-deg-gradient-1{
+    background: #b3e5fc;
+    background: -webkit-linear-gradient(45deg, #0d47a1  0%, #34C6FE 100%);
+    background: linear-gradient(45deg, #34C6FE 0%, #0d47a1 100%);
+}
+
+.aqua-gradient {
+   color:#14CCCC;
+}
+
+.text-white{
+    color:#FFF !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

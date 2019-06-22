@@ -1,0 +1,51 @@
+
+<div id="main"  *ngIf="this.preloader">
+
+</div>
+<mat-spinner color="secondary" *ngIf="this.preloader"></mat-spinner>
+
+<mat-grid-list cols="1" rowHeight="300px">
+  <mat-grid-tile-header>
+    <app-toolbar ></app-toolbar>
+  </mat-grid-tile-header>
+  <mat-grid-list cols="1"  rowHeight="35rem">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="card-login">
+        <mat-card-title class="text-center yellow-gradient" >INICIAR SESIÓN</mat-card-title>
+        <mat-card-content>
+
+          <div class="alert mat-elevation-z1" *ngIf="this.singup">
+            <p>Usuario o Contraseña Incorrectos</p>
+          </div>
+          <form class="form-login"  #formLogin="ngForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Usuario</mat-label>
+              <mat-icon matSuffix class="material-icons">person_pin</mat-icon>
+              <input type="text" matInput placeholder="Escribe tu usuario o email" name="username" #username="ngModel" minlength="5" [(ngModel)]="user.username" autocomplete="off" required>
+              <mat-error *ngIf="username.errors?.required">El usuario es obligatorio </mat-error>
+              <mat-error *ngIf="username.errors?.minlength">El usuario debe tener al menos 5 caracteres </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width"  appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <mat-icon matSuffix class="material-icons">enhanced_encryption</mat-icon>
+              <input type="password" matInput placeholder="Escribe tu contraseña" name="password" #password="ngModel" minlength="6"  required [(ngModel)]="user.password" autocomplete="off">
+              <mat-error *ngIf="password.errors?.required" >El contraseña es obligatoria </mat-error>
+              <mat-error *ngIf="password.errors?.minlength"> La contraseña debe tener al menos 6 caracteres</mat-error>
+            </mat-form-field>
+
+            <div class="button">
+              <button mat-raised-button  class="yellow-gradient" style="color:#FFF;" type="submit" [disabled]="formLogin.invalid"><mat-icon class="material-icons" >touch_app</mat-icon>Entrar</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-tile-footer >
+    <app-footer></app-footer>
+  </mat-grid-tile-footer>
+</mat-grid-list>
+
+

@@ -1,0 +1,112 @@
+.sidenav-container {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.sidenav {
+  width: 250px;
+}
+.sidenav .nav-bar-link{
+  height: 50px !important;
+}
+.sidenav .nav-bar-link mat-icon{
+  color:#009C8C;
+}
+
+#section-main{
+ width: 80%;
+  margin: 10px auto;
+  height: auto;
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+}
+.footer-text{
+  padding:7px;
+  color:#FFF;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.card-profile{
+  background-image: url('http://localhost:4200/assets/img/material-header.jpg');
+  background-size: cover;
+  box-shadow: none;
+  height: 150px;
+  width: 100%;
+  border-radius:0 !important;
+  padding:0px!important;
+}
+.card-profile .profile-info{
+  position: relative;
+  padding: 2px;
+  height: 62px;
+  width: 100%;
+}
+
+.card-profile .profile-info .profile-name{
+  font-size: 16px;
+  margin: 12px 5px 2px 0 !important;
+  font-weight: 400;
+  color:#FFFF;
+}
+
+.card-profile .profile-info .profile-role{
+  font-size: 14px;
+  margin: 5px 5px 2px 0 !important;
+  font-weight: 400;
+  color:#FFFF;
+}
+.card-profile mat-card-header {
+  padding: 5px;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.card-header-image-profile {
+  height: 80px !important;
+  width: 80px !important;
+  background-image: url('http://localhost:4200/assets/img/avatar.png');
+  background-size: cover;
+  border: 2px solid #fff !important;
+  position: relative;
+  display: block;
+  top: 1px;
+  left: 0;
+  z-index: 10;
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0.8;
+  transition: all 0.25s;
+}
+
+
+.card-header-image-profile:hover{
+  opacity: 1;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.title-sidenav{
+  background: none !important;
+  color:#FFFF;
+  font-weight: 400;
+
+}
+

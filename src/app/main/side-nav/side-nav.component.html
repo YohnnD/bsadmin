@@ -1,0 +1,36 @@
+<td-layout [mode]="side" [opened]="true" >
+  <td-navigation-drawer flex [sidenavTitle]="name"  name="{{identity.name +' '+ identity.surname}}" email="{{identity.email}}" icon="donut_small" color="primary">
+    <mat-nav-list>
+      <a *ngFor="let item of routes"  href="#"   routerLink="{{item.route}}" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
+    </mat-nav-list>
+    <div td-navigation-drawer-menu>
+      <mat-nav-list>
+        <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
+      </mat-nav-list>
+    </div>
+  </td-navigation-drawer>
+  <td-layout-nav [toolbarTitle]="name"  navigationRoute="/" color="accent"   >
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <span flex></span>
+      <a mat-icon-button matTooltip="Inicio" matTooltipPosition="before"><mat-icon>home</mat-icon></a>
+      <a mat-icon-button matTooltip="Salir" matTooltipPosition="before" routerLink="logout/1"><mat-icon>exit_to_app</mat-icon></a>
+    </div>
+
+    <!-- router outlet goes here -->
+
+    <router-outlet>
+
+    </router-outlet>
+
+    <td-layout-footer  class="pad-none">
+      <div layout="row" layout-align="start center">
+        <footer class="blue-45-deg-gradient-1">
+          <div class="footer-text"><p>© 2018 Copyright -BSADMIN C.A. - Todos los derechos reservados</p></div>
+        </footer>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>
+</td-layout>

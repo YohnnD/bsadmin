@@ -1,0 +1,53 @@
+:host{
+    padding: 0;
+    margin: 0;
+}
+.card-login{
+    max-width: 350px;
+
+}
+mat-card{
+    padding: 0px;
+}
+
+.alert{
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    background: #d6383b;
+    width: 70%;
+    margin: auto auto 20px auto;
+    transition: all 3s;
+    color: #FFF;
+    font-weight: 300;
+}
+
+.alert p{
+    padding: 0;
+    margin: 0;
+}
+mat-card-title{
+    padding: 13px !important;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FFF;
+     border-radius:5px 5px 0 0;
+}
+mat-card-content{
+    padding: 25px !important;
+}
+
+.button{
+    padding: 5px;
+}
+.form-login{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.full-width{
+    width: 100%;
+
+}
