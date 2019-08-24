@@ -3,16 +3,21 @@ import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
 import {Router,ActivatedRoute,Params} from "@angular/router";
 
+import {tdBounceAnimation} from '@covalent/core/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-    providers:[UserService]
+    providers:[UserService],
+    animations: [
+        tdBounceAnimation
+    ]
 })
 export class LoginComponent implements OnInit {
     public user: User;
     public token:string;
+    bounceState: boolean = false;
     public identity:string;
     public singup:boolean;
     public preloader:boolean;
@@ -21,7 +26,7 @@ export class LoginComponent implements OnInit {
       public _router:Router,
       public _route: ActivatedRoute,
   ) {
-    this.user=new User(1,'','','','','','');
+    this.user=new User(1,'','','','','','','');
     this.logout();
   }
 
@@ -32,11 +37,22 @@ export class LoginComponent implements OnInit {
     this.preloader=true;
     this.singup=false;
 
+
     this._userService.singup(this.user,false).subscribe(
         response=>{
+
            if(response.status==="error"){//si  contraseña o el usuario es incorrecto
                this.preloader=false;
                 this.singup=true;
+
+                if(this.bounceState==true){
+                    this.bounceState=false;
+                }else{
+                    this.bounceState=true;
+                }
+
+
+
            }else{
                this.singup=false;
 

@@ -1,11 +1,11 @@
-<td-layout [mode]="side" [opened]="true" >
+<td-layout [mode]="push" [opened]="" >
   <td-navigation-drawer flex [sidenavTitle]="name"  name="{{identity.name +' '+ identity.surname}}" email="{{identity.email}}" icon="donut_small" color="primary">
     <mat-nav-list>
       <a *ngFor="let item of routes"  href="#"   routerLink="{{item.route}}" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
     </mat-nav-list>
     <div td-navigation-drawer-menu>
       <mat-nav-list>
-        <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
+        <a *ngFor="let item of usermenu"  mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
       </mat-nav-list>
     </div>
   </td-navigation-drawer>

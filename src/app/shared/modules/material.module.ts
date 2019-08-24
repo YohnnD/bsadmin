@@ -12,15 +12,15 @@ import {
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSliderModule,
-    MatSnackBarModule,
     MatTooltipModule,
     MatToolbarModule,
     MatSidenavModule,
     MatChipsModule,
-    MatSelectModule
+    MatSelectModule,
 } from '@angular/material';
 import {MatTableModule} from "@angular/material/table";
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 /*Covalent*/
 import { CovalentCommonModule,
@@ -28,8 +28,7 @@ import { CovalentCommonModule,
     CovalentMediaModule,
     CovalentExpansionPanelModule,
     CovalentStepsModule,
-    CovalentLoadingModule,
-    CovalentDialogsModule,
+
     CovalentSearchModule,
     CovalentPagingModule,
     CovalentNotificationsModule,
@@ -38,7 +37,8 @@ import { CovalentCommonModule,
     CovalentMessageModule
          } from '@covalent/core';
 
-
+import { CovalentLoadingModule } from '@covalent/core/loading';
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
 
 @NgModule({
   declarations: [],
@@ -75,7 +75,9 @@ import { CovalentCommonModule,
       CovalentMenuModule,
       CovalentDataTableModule,
       CovalentMessageModule,
-      MatSelectModule
+      MatRadioModule,
+      MatSelectModule,
+
   ],
     exports: [
         MatButtonModule,
@@ -97,7 +99,7 @@ import { CovalentCommonModule,
         MatChipsModule,
         MatTableModule,
         MatSelectModule,
-
+        MatRadioModule,
         /*Covalent */
         CovalentCommonModule,
         CovalentLayoutModule,

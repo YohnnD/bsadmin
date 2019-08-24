@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {SideNavComponent} from "./side-nav/side-nav.component";
 
 const routes: Routes = [
-    {path: '', component: SideNavComponent,children:[
+        {path: '', component: SideNavComponent,children:[
         {path:'users' ,loadChildren:'../users/users.module#UsersModule'}
     ]},
 

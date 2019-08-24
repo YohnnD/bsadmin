@@ -1,0 +1,80 @@
+<td-layout-card-over color="accent">
+  <mat-card-title class="tc-orange-700" >Editar Usuarios</mat-card-title>
+  <mat-card-subtitle>Edita los datos del usuario que utilizaran esta APP</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <div *tdLoading="'loading_user'; mode:'indeterminate'; type:'circle'; strategy:'replace'; color:'accent'">
+  <mat-card-content>
+      <form #formUserRegister="ngForm" (submit)="onSubmit();">
+
+        <div layout-gt-xs="row">
+          <mat-form-field class="full-width" appearance="outline" flex-gt-xs="60">
+            <mat-label>Nombre</mat-label>
+            <mat-icon matSuffix class="material-icons tc-green-700 ">supervisor_account</mat-icon>
+            <input type="text" matInput placeholder="Escribe tu nombre" name="name" #name="ngModel"
+                   minlength="3" maxlength="20" [(ngModel)]="user.name" required>
+
+            <mat-error *ngIf="name.errors?.required">El nombre es obligatorio</mat-error>
+            <mat-error *ngIf="name.errors?.minlength">El nombre debe tener al menos 3 caracteres</mat-error>
+          </mat-form-field>
+
+
+
+          <span flex-gt-sm="10"></span>
+          <mat-form-field class="full-width" appearance="outline" flex-gt-xs="60">
+            <mat-label>Apellido</mat-label>
+            <mat-icon matSuffix class="material-icons tc-green-700">supervisor_account</mat-icon>
+            <input type="text" matInput placeholder="Escribe tu apellido " name="surname"
+                   #surname="ngModel" minlength="3" maxlength="20" [(ngModel)]="user.surname" required>
+
+            <mat-error *ngIf="surname.errors?.required">El apellido es obligatorio</mat-error>
+            <mat-error *ngIf="surname.errors?.minlength">El apellido debe tener al menos 3 caracteres
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div layout-gt-xs="row">
+          <mat-form-field class="full-width" appearance="outline" flex-gt-xs="60">
+            <mat-label>Nick</mat-label>
+            <mat-icon matSuffix class="material-icons tc-green-700">account_box</mat-icon>
+            <input type="text" matInput placeholder="Escribe tu nick " name="nick"
+                   #nick="ngModel" minlength="5" maxlength="20" [(ngModel)]="user.nick" required>
+            <mat-error *ngIf="nick.errors?.required">El nick es obligatorio</mat-error>
+            <mat-error *ngIf="nick.errors?.minlength">El nick debe tener al menos 5 caracteres
+            </mat-error>
+          </mat-form-field>
+
+          <span flex-gt-sm="10"></span>
+
+          <mat-form-field class="full-width" appearance="outline" flex-gt-xs="60">
+            <mat-label>Correo</mat-label>
+            <mat-icon matSuffix class="material-icons tc-green-700">email</mat-icon>
+            <input type="email" matInput placeholder="Escribe tu correo " name="email"
+                   #email="ngModel" minlength="3" maxlength="30" [(ngModel)]="user.email" required>
+
+            <mat-error *ngIf="email.errors?.required">El correo es obligatorio</mat-error>
+            <mat-error *ngIf="email.errors?.minlength">El correo debe tener al menos 3 caracteres
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+
+
+        <div layout-gt-xs="row">
+          <mat-form-field appearance="outline" class="full-width" flex-gt-xs="60">
+            <mat-label>Seleciona el ROL</mat-label>
+            <mat-icon matSuffix class="material-icons tc-green-700">https</mat-icon>
+            <mat-select [(value)]="user.role" >
+              <mat-option value="user">Usuario</mat-option>
+              <mat-option value="admin">Admintrador</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+            <span flex-gt-sm="10"></span>
+            <span flex-gt-sm="30" flex-gt-xs="30" class="full-width text-center" ><button mat-raised-button color="accent" type="submit" [disabled]="formUserRegister.invalid" ><mat-icon class="material-icons">save</mat-icon>Guardar</button></span>
+            <span flex-gt-sm="30" flex-gt-xs="30" class="full-width text-center" ><button mat-raised-button class="text-white bgc-red-700" type="button" (click)="delete()" ><mat-icon class="material-icons">delete</mat-icon>Eliminar</button></span>
+        </div>
+      </form>
+
+    </mat-card-content>
+  </div>
+</td-layout-card-over>

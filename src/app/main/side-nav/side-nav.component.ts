@@ -8,9 +8,10 @@ import { TdMediaService } from '@covalent/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent{
-    name = 'BSADMIN';
+     name = 'BSADMIN';
      public identity;
-    routes: Object[] = [{
+
+     routes: Object[] = [{
         icon: 'home',
         route: '/home',
         title: 'Inicio',

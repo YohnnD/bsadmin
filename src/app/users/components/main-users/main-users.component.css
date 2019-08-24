@@ -1,6 +1,9 @@
 :host{
-    width: 100%;
+    height: 100%;
 
+}
+.full-width{
+    width: 100% !important;
 }
 
 divide{
@@ -9,4 +12,8 @@ divide{
 
 table {
     width: 100%;
+}
+
+.td-loading-wrapper{
+    height: 100% !important;
 }
